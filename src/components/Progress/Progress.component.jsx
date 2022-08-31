@@ -1,4 +1,3 @@
-import { ReactComponent as XIcon } from "icons/x-circle.svg"
 import { ReactComponent as CheckIcon } from "icons/checklist.svg"
 
 import styles from "./Progress.module.sass"
