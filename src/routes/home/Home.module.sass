@@ -1,6 +1,8 @@
 .HomePage
-    background: red
+    &_section
+        min-height: 80vh
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax(326px, 1fr))
 
-    &__section
-        display: flex
-        background: green
+        h1
+            margin: auto
