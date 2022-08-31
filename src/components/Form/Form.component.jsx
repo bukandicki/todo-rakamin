@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
+
 import styles from "./Form.module.sass"
 
-const Form = ({ name, progress, onSubmit, common }) => {
+const Form = ({ name, progress, onSubmit, common, button }) => {
     let timeout
 
     const [commonForm, setCommonForm] = useState(true)
@@ -134,7 +135,6 @@ const Form = ({ name, progress, onSubmit, common }) => {
                     placeholder="Input description..."
                     onChange={handleDescriptionChange}
                     required
-                    autoFocus
                 />
             </div>
         </>
@@ -143,7 +143,25 @@ const Form = ({ name, progress, onSubmit, common }) => {
     return (
         <form className={styles.Form} onSubmit={handleOnSubmit}>
             {commonForm ? renderCommonField() : renderGroupField() }
-            <input type="submit" className={styles.Form_submit} />
+            {button && (
+                <div className={styles.Form_actions}>
+                    <button
+                        className={styles.Form_cta}
+                        style={button.cancel.styles}
+                        onClick={button.cancel.handler}
+                        type="button"
+                    >
+                        {button.cancel.title}
+                    </button>
+                    <button
+                        className={styles.Form_cta}
+                        style={button.confirm.styles}
+                        type="submit"
+                    >
+                        {button.confirm.title}
+                    </button>
+                </div>
+            )}
         </form>
     )
 }
