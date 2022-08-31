@@ -1,2 +1,54 @@
 .Card
-    color: yellow
+    padding: 16px
+    background: #FAFAFA
+    border: 1px solid #E0E0E0
+    border-radius: 4px
+    cursor: pointer
+
+    &_title
+        padding-bottom: 8px
+        margin-bottom: 8px
+        font-weight: 700
+        font-size: 14px
+        line-height: 24px
+        color: #404040
+        border-bottom: 2px dashed #E0E0E0
+
+    &_details
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+    &_loading
+        margin-top: 10px
+        font-size: 12px
+        animation: blink infinite .5s
+
+        @keyframes blink
+            0%
+                opacity: 0
+            100%
+                opacity: 1
+
+    &_more
+        position: relative
+        margin-left: 26px
+
+        &___active,
+        &:hover
+            background: #EDEDED
+            border-radius: 4px
+
+        > svg
+            vertical-align: bottom
+            cursor: pointer
+
+    &_alert
+        font-weight: 400
+        font-size: 14px
+        line-height: 24px
+        color: #404040
+        margin-bottom: 16px
+
+    &:hover
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1)
