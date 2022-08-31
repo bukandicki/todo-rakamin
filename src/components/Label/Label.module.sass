@@ -1,0 +1,34 @@
+@import "../../sass/app.sass"
+
+.Label
+    padding: 2px 8px
+    font-size: 12px
+    font-weight: 600
+    width: max-content
+
+    &_success,
+    &_primary,
+    &_warning,
+    &_danger
+        border: 1px solid
+        border-radius: 4px
+
+    &_success
+        color: $success-color
+        border-color: $success-border
+        background: $success-background
+
+    &_primary
+        color: $primary-color
+        border-color: $primary-border
+        background: $primary-background
+
+    &_warning
+        color: $warning-color
+        border-color: $warning-border
+        background: $warning-background
+
+    &_danger
+        color: $danger-color
+        border-color: $danger-border
+        background: $danger-background
