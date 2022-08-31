@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState, useContext } from "react"
 import { createItem, editItem } from "lib/api"
 import { useComponentVisible } from "utils/clickOutsideElement"
@@ -81,7 +82,7 @@ const TaskCard = ({ title, desc, todoId, variant, taskLeft, taskRight }) => {
 
     useEffect(() => {
         fetchItems(todoId)
-    })
+    }, [])
 
     const validateVariant = /^(primary|success|warning|danger)$/
     const variantClass = {

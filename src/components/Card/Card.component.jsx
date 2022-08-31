@@ -46,14 +46,12 @@ const Card = ({ itemDetail, title, percentage, taskLeft, taskRight, onUpdated })
         const { id, todo_id } = itemDetail
         const validateMove = move !== undefined && move > 0
 
-        if (!validateMove) return
-
         setIsLoading(true)
         await editItem({
             id: todo_id,
             target_todo_id: id,
             progress_percentage,
-            move
+            ...(validateMove ? { move } : null)
         })
 
         await onUpdated(validateMove ? move : todo_id)
@@ -78,7 +76,7 @@ const Card = ({ itemDetail, title, percentage, taskLeft, taskRight, onUpdated })
 
         setDeleteButtonObject(deleteButton)
         setEditButtonObject(editButton)
-    })
+    }, [])
 
     return (
         <div
