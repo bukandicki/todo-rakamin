@@ -14,9 +14,10 @@ const Navbar = ({ onUpdated }) => {
     const handleSubmit = async ({ title, description }) => {
         clearTimeout(timeout)
         timeout = setTimeout(async () => {
+            setIsComponentVisible(false)
+
             await createTodo({ title, description })
             await onUpdated()
-            setIsComponentVisible(false)
         }, 500)
     }
 

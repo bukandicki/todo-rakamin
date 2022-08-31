@@ -37,9 +37,9 @@ const Card = ({ itemDetail, title, percentage, taskLeft, taskRight, onUpdated })
         setIsLoading(true)
         await deleteItem({ id: todo_id, target_todo_id: id, name })
 
+        handleHideDeleteModal()
         await onUpdated(todo_id)
         setIsLoading(false)
-        handleHideDeleteModal()
     }
 
     const handleEditItem = async ({ move, progress_percentage }) => {
@@ -54,9 +54,9 @@ const Card = ({ itemDetail, title, percentage, taskLeft, taskRight, onUpdated })
             ...(validateMove ? { move } : null)
         })
 
+        handleHideEditModal()
         await onUpdated(validateMove ? move : todo_id)
         setIsLoading(false)
-        handleHideEditModal()
     }
 
     const drag = (e) => {

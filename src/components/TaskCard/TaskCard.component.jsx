@@ -26,11 +26,10 @@ const TaskCard = ({ title, desc, todoId, variant, taskLeft, taskRight }) => {
     }
 
     const handleCreateTask = async ({ name, progress_percentage }) => {
+        setIsComponentVisible(false)
 
         await createItem({ id: todoId, name, progress_percentage })
-
         await fetchItems(todoId)
-        setIsComponentVisible(false)
     }
 
     const drop = async (e) => {
