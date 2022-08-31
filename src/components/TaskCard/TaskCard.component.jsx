@@ -81,7 +81,7 @@ const TaskCard = ({ title, desc, todoId, variant, taskLeft, taskRight }) => {
 
     useEffect(() => {
         fetchItems(todoId)
-    }, [])
+    })
 
     const validateVariant = /^(primary|success|warning|danger)$/
     const variantClass = {
@@ -123,9 +123,9 @@ const TaskCard = ({ title, desc, todoId, variant, taskLeft, taskRight }) => {
                 />
             </Modal>
 
-            <Label text={title} variant={variant} />
-            <div className={styles.TaskCard_desc}>{desc}</div>
-            <div className={styles.TaskCard_todos} id={`todos_${todoId}`}>
+            <Label text={title} variant={variant} data-id={todoId} />
+            <div className={styles.TaskCard_desc} data-id={todoId}>{desc}</div>
+            <div className={styles.TaskCard_todos} id={`todos_${todoId}`} data-id={todoId}>
                 {items && items.map(item => (
                     <Card
                         key={item.id}
@@ -143,7 +143,7 @@ const TaskCard = ({ title, desc, todoId, variant, taskLeft, taskRight }) => {
                     </div>
                 )}
             </div>
-            <button className={styles.TaskCard_action} onClick={() => setIsComponentVisible(true)}>
+            <button className={styles.TaskCard_action} onClick={() => setIsComponentVisible(true)} data-id={todoId}>
                 <PlusCircleIcon />
                 <span>New Task</span>
             </button>

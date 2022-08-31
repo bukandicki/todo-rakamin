@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react"
 import { deleteItem, editItem } from "lib/api"
 import { useComponentVisible } from "utils/clickOutsideElement"
@@ -67,7 +68,7 @@ const Card = ({ itemDetail, title, percentage, taskLeft, taskRight, onUpdated })
         e.dataTransfer.setData("text", payload)
     }
 
-    const dragEnd = async (e) => {
+    const dragEnd = async () => {
         await onUpdated(itemDetail.todo_id)
     }
 
@@ -77,7 +78,7 @@ const Card = ({ itemDetail, title, percentage, taskLeft, taskRight, onUpdated })
 
         setDeleteButtonObject(deleteButton)
         setEditButtonObject(editButton)
-    }, [])
+    })
 
     return (
         <div
