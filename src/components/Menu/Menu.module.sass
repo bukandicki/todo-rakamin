@@ -1,0 +1,39 @@
+.Menu
+    position: absolute
+    padding: 16px 0
+    border-radius: 8px
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08)
+    background: #FFFFFF
+    width: min-content
+    text-align: center
+    top: 50%
+    transform: translate(-70%, 10%)
+    z-index: 2
+
+.Menu_actions
+    background: #fff
+    list-style: none
+
+    &__item
+        display: flex
+        align-items: center
+        height: 36px
+        padding: 0 16px
+        cursor: pointer
+
+        &:hover
+            svg path
+                stroke: #01959F
+            span
+                color: #01959F
+
+        &:last-of-type:hover
+            svg path
+                stroke: #E11428
+            span
+                color: #E11428
+
+        span
+            font-weight: 600
+            white-space: nowrap
+            margin-left: 16px
